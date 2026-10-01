@@ -347,6 +347,14 @@ impl Escrow {
         Self::accept_client_migration_impl(&env, contract_id, new_client)
     }
 
+    pub fn cancel_client_migration(
+        env: Env,
+        contract_id: u32,
+        current_client: Address,
+    ) -> bool {
+        Self::cancel_client_migration_impl(&env, contract_id, current_client)
+    }
+
     pub fn has_pending_client_migration(env: Env, contract_id: u32) -> bool {
         Self::has_pending_client_migration_impl(&env, contract_id)
     }
